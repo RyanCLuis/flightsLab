@@ -5,11 +5,27 @@ function newFlight(req, res) {
 }
 
 async function create(req, res) {
-    await Flight.create(req.body)
-    res.redirect('/flights/new')
+    try {
+        await Flight.create(req.body)
+        res.redirect('/flights/new')
+    } catch (err) {
+        console.log('an error occured: \n', err)
+        res.render('error', { error: err })
+    }
+}
+
+async function index(req, res) {
+    try {
+        const allFlights = await Flight.find({})
+        res.render('flights/index', {flights: allFlights})
+    } catch (err) {
+        console.log('an error occured: \n', err)
+        res.render('error', { error: err })
+    }
 }
 
 module.exports = {
     new: newFlight,
     create,
+    index
 }

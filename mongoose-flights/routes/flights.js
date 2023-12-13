@@ -8,4 +8,7 @@ router.get('/new', flightsCtrl.new)
 // POST /flights
 router.post('/', flightsCtrl.create)
 
+// GEt /flights
+router.get('/', flightsCtrl.index)
+
 module.exports = router;
