@@ -21,3 +21,26 @@ th, td {
 th {
   text-align: center;
 }
+
+/* Style the show-page section */
+#show-page {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Style the individual elements within the show-page section */
+#show-page div {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Style labels */
+#show-page div:nth-child(odd) {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Style data */
+#show-page div:nth-child(even) {
+  color: #333;
+}
