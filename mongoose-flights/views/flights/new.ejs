@@ -14,7 +14,7 @@
     <select name="airport">
         <option value="AUS">AUS</option>
         <option value="DFW">DFW</option>
-        <option value="DEN">DEN</option>
+        <option value="DEN" selected>DEN</option>
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
     </select>
@@ -29,11 +29,12 @@
     id="flight-date"
     type="datetime-local"
     name="departs"
-    value="2023-12-13T13:21"/>
+    value="0000-00-00T00:00"/>
     </label><br>
     </label><br>
     <button type="submit">Add Flight</button>
 </form>
-<p><%= errorMsg %></p>
+
+
 
 <%- include('../partials/footer') %>
