@@ -11,4 +11,45 @@
     <div><%= flight.departs %></div>
 </section>
 
+<form method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Add Destination:
+        <select name="airport">
+            <option value="AUS" selected>AUS</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            <option value="DFW">DFW</option>
+            <option value="ATX">ATX</option>
+        </select>
+    </label>
+    <label>Enter date and time of your flight:</label>
+    <input 
+    type="datetime-local"
+    name="arrival"
+    value="0000-00-00T00:00"/>
+    </label>
+<input type="submit" value="Add Destination" id="destination">
+</form>
+
+<h4>Destinations!</h4>
+<% if (flight.destinations.length) { %>
+    <table>
+    <thead>
+        <tr>
+        <th>Airport</th>
+        <th>Arrival</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% flight.destinations.forEach(function(d) { %>
+        <tr>
+            <td><%= d.airport %></td>
+            <td><%= d.arrival %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+    </table>
+<% } else { %>
+    <h5>No Destinations</h5>
+<% } %>
+
 <%- include('../partials/footer') %>

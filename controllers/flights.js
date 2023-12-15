@@ -1,16 +1,8 @@
 const Flight = require('../models/flight')
 
 function newFlight(req, res) {
-    // let aYearFromNow = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-    // aYearFromNow = aYearFromNow.toISOString()
-    // console.log("this is the date after a full year \n", aYearFromNow)
-    res.render('flights/new', { errorMsg: '', })//aYearFromNow: aYearFromNow})
+    res.render('flights/new', { errorMsg: ''})
 }
-
-// const dt = newFlight.departs;
-// let departsDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
-// departsDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`
-// value=<% new Date(new Date().setFullYear(new Date().getFullYear() + 1)) %>
 
 async function create(req, res) {
     try {
