@@ -1,4 +1,5 @@
 const Flight = require('../models/flight')
+const Ticket = require('../models/ticket')
 
 function newFlight(req, res) {
     res.render('flights/new', { errorMsg: ''})
@@ -25,7 +26,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const flight = await Flight.findById(req.params.id)
+    const flight = await Flight.findById(req.params.id).populate('tickets')
     res.render('flights/show', { title: 'Flight Details', flight })
 }
 

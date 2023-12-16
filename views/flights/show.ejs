@@ -28,6 +28,17 @@
     value="0000-00-00T00:00"/>
     </label>
 <input type="submit" value="Add Destination" id="destination">
+<br>
+<br>
+<h4>Tickets</h4>
+<ul>
+    <% flight.tickets.forEach(function(ticket) { %>
+        <li>Seat: <%= ticket.seat %>, Price: <%= ticket.price %></li>
+    <% }) %>
+</ul>
+
+<a href="/flights/<%= flight._id %>/tickets/new">Add New Ticket</a>
+
 </form>
 
 <h4>Destinations!</h4>

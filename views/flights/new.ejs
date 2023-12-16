@@ -29,12 +29,23 @@
     id="flight-date"
     type="datetime-local"
     name="departs"
-    value="0000-00-00T00:00"/>
+    >
     </label><br>
     </label><br>
     <button type="submit">Add Flight</button>
 </form>
 
+<h2>Create a New Ticket for <%= flight.airline %> <%= flight.flightNo %></h2>
+
+<form action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="seat">Seat:</label>
+    <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+    
+    <label for="price">Price:</label>
+    <input type="number" name="price" required min="0">
+
+    <button type="submit">Create Ticket</button>
+</form>
 
 
 <%- include('../partials/footer') %>
