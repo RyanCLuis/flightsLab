@@ -9,7 +9,6 @@ async function create(req, res) {
     flight.destinations.push(req.body)
     try {
         await flight.save()
-        console.log('After saving:', flight.destinations);
     } catch (err) {
         console.log(err)
     }
