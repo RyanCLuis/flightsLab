@@ -13,14 +13,10 @@ const flightSchema = new Schema({
     flightNo: Number,
     departs: Date,
     destinations: [destinationSchema],
-    tickets: [
-    {
+    seat: [{
         type: Schema.Types.ObjectId,
         ref: 'Ticket',
-    },
-    ],
+    }],
 })
 
-const Flight = mongoose.model('Flight', flightSchema)
-
-module.exports = Flight
+module.exports = mongoose.model('Flight', flightSchema)
