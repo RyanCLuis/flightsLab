@@ -34,7 +34,10 @@
 <br>
 <br>
 
-<a href="/tickets/new">New Ticket!</a>
+<h3>New Ticket:</h3>
+        <label>Add Ticket:
+            <td><a href="/flights/<%= flight._id %>/tickets/new">NEW TICKET</a></td>
+        </label><br>
 
 <h4>Destinations!</h4>
 <% if (flight.destinations.length) { %>
