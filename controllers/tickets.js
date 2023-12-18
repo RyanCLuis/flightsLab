@@ -6,23 +6,14 @@ module.exports = {
     create
 }
 
-function newTicket(req, res){
-    const flight = Flight.findById(req.params.id)
-        res.render('tickets/new',{
-            flight,
-            title: 'Add New Ticket'
-        })  
+async function newTicket(req, res){
+    const flight = await Flight.findById(req.params.id)
+        res.render('tickets/new',{flight})  
 }
 
-function create(req, res){
-    const flight = Flight.findById(req.params.id, function(err, flights){
-        req.body.flight = flights._id;
-        req.body.price = parseInt(req.body.price);
-        console.log(req.body, "<-- ticket.req.body")
-        Ticket.create(req.body, function(err, ticket){
-            res.redirect(`/flights/${flights._id}`, 
-            flight 
-            );
-        })
-    })
+async function create(req, res){
+    const flight = await Flight.findById(req.params.id,)
+        req.body.flight = flight
+        await Ticket.create(req.body)
+        res.redirect(`/flights/${flight._id}`)
 }

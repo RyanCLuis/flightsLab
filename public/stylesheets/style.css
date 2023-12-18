@@ -3,7 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h4 {
+h4, h6 {
   font-size: 20px;
   color: purple;
   text-align: center;

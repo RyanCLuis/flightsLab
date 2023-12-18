@@ -5,16 +5,14 @@ const flightsCtrl = require('../controllers/flights')
 // Get /flights/new
 router.get('/new', flightsCtrl.new)
 
-// GEt /flights/:id
-router.get('/:id', flightsCtrl.show)
+// POST /flights
+router.post('/', flightsCtrl.create)
 
 // GEt /flights
 router.get('/', flightsCtrl.index)
 
-// POST /flights
-router.post('/', flightsCtrl.create)
+// GEt /flights/:id
+router.get('/:id', flightsCtrl.show)
 
-// DELETE /flights/:id
-router.delete('/:id', flightsCtrl.delete);
 
 module.exports = router;

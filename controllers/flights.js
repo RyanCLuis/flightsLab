@@ -31,10 +31,7 @@ async function show(req, res) {
     res.render('flights/show', { title: 'Flight Details', flight, tickets })
     }
 
-function deleteFlight(req, res){
-    Flight.deleteOne(req.params.id)
-    res.redirect('/flights');
-}
+
 
 
 module.exports = {
@@ -42,5 +39,4 @@ module.exports = {
     index,
     create,
     show,
-    delete: deleteFlight
 }
